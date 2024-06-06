@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Flask</title>
+</head>
+<body>
+    <h1>Arely Deyanira Tamariz Romero Grupo B</h1>
+    <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="Example Image" style="width: 200px; height: auto;">
+
+    <h2>Agregar Tarea</h2>
+    <form action="/add_task" method="POST">
+        <label for="task">Nueva Tarea:</label>
+        <input type="text" id="task" name="task" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Lista de Tareas</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
